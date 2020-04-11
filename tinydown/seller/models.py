@@ -19,6 +19,8 @@ class Account(models.Model):
     account_price = models.DecimalField(default=1.0, max_digits=100.0, decimal_places=2)
     # 当前使用人数
     current_users = models.IntegerField(default=0)
+    # 总计使用人数
+    his_users = models.IntegerField(default=0)
 
 # 订单
 class Order(models.Model):
@@ -37,4 +39,5 @@ class Order(models.Model):
     state = models.IntegerField(default=0)
     # 价格
     price = models.DecimalField(default=1.0, max_digits=100.0, decimal_places=2)
-    # 
+    # 历史
+    history = models.CharField(max_length=200)
